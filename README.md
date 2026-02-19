@@ -178,7 +178,7 @@ Marks: 85
 Grade: A
 ----------------------------
 
-Student ID: 2
+Student ID: 4
 Student Name: Mutisya Simiyu
 Course Name: Data Structures and Algorithms
 Course Code: DSA102
