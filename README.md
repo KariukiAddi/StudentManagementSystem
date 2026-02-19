@@ -176,14 +176,7 @@ Course Name: Object Oriented Software Design Methods
 Course Code: OOSDM101
 Marks: 85
 Grade: A
-----------------------------
 
-Student ID: 4
-Student Name: Mutisya Simiyu
-Course Name: Data Structures and Algorithms
-Course Code: DSA102
-Marks: 80
-Grade: A
 # 📌 Conclusion
 
 The Student Management System successfully demonstrates fundamental Object-Oriented Software Design principles. The use of abstraction, encapsulation, inheritance, and polymorphism ensures modular, maintainable, and reusable code.
