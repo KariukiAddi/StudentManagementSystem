@@ -176,6 +176,15 @@ Course Name: Object Oriented Software Design Methods
 Course Code: OOSDM101
 Marks: 85
 Grade: A
+----------------------------
+
+Student ID: 4
+Student Name: Mutisya Simiyu
+Course Name: Data Structures and Algorithms
+Course Code: DSA102
+Marks: 80
+Grade: A
+----------------------------
 
 # 📌 Conclusion
 
