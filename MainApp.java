@@ -12,6 +12,7 @@ public class MainApp {
         Student student2 = new Student(2, "Grace Adhiambo", 90, course2);
         Student student3 = new Student(3, "Jane wambua", 85, course1);
         Student student4 = new Student(4, "Mutisya Simiyu", 80, course2);
+        
         // Display student details
         student1.displayDetails();
         student2.displayDetails();
