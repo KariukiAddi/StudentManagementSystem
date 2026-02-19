@@ -32,7 +32,7 @@ public class Student extends Person {
 
     // Method to calculate grade
     public String calculateGrade() {
-        if (marks >= 70)
+        if (marks >= 80)
             return "A";
         else if (marks >= 60)
             return "B";

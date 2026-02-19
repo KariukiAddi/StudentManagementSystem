@@ -1,44 +1,21 @@
-Perfect 👍 Kelvin.
-Here is a **proper, well-structured README.md** that follows your CAT instructions exactly and helps you score full marks.
-
-You can copy everything below and paste into your `README.md` file.
-
----
-
 # 📘 Student Management System
 
 ### Object Oriented Software Design Methods – Project-Based CAT
 
-**Student Name:** Kelvin Kariuki
+**Developer Name:** Kelvin Ngige Kariuki
+**Registration Number** BCS-03-0039/2026
 **Course Unit:** Object Oriented Software Design Methods
-**Assessment Type:** Project-Based CAT
 **Language Used:** Java
-**Mode:** Individual
 
----
-
-# 📌 Project Title
-
+# Project Title
 **Design and Implementation of a Simple Object-Oriented Student Management System**
 
----
+# Project Description
+This project involves the design and implementation of a Simple Student Management System using Java and core Object-Oriented Programming principles. The system enables the creation of student objects linked to specific courses, captures key details such as Student ID, Name, Course information, and Marks, and automatically calculates grades based on defined criteria. It is structured into four main classes: an abstract Person superclass, a Student subclass, a Course class, and a MainApp execution class.
 
-# 📖 Project Description
+The project demonstrates fundamental OOP concepts including encapsulation , inheritance , polymorphism and abstraction. The system successfully processes multiple students, computes grades dynamically, and displays complete student records in a structured format, meeting all functional and design requirements of the project.
 
-This project implements a simple Student Management System using Object-Oriented Programming (OOP) principles in Java.
-
-The system allows:
-
-* Creation of student objects
-* Storage of student details
-* Calculation and display of student grades
-* Demonstration of core OOP concepts
-
-The project strictly follows object-oriented design principles including encapsulation, inheritance, polymorphism, and abstraction.
-
----
-
-# 🏗 System Design Overview
+# System Design Overview
 
 The system consists of the following classes:
 
@@ -47,107 +24,110 @@ The system consists of the following classes:
 3. **Course**
 4. **MainApp (Application Class)**
 
----
 
-# 🧩 Class Design Explanation
+# Class Design Explanation
 
 ## 1️⃣ Person (Abstract Class)
-
-The `Person` class is an abstract class that defines a common attribute:
-
-* `name`
-
-It contains:
-
-* A constructor
-* Getter and setter methods
-* An abstract method `displayDetails()`
-
-This demonstrates **Abstraction**, because it provides a general structure without full implementation.
-
----
+The Person class acts as a general template for all individuals in the system. It stores basic information such as the name and sets a rule that any type of person must be able to show their details. This ensures a consistent structure and allows other classes, like Student, to build on this template.
 
 ## 2️⃣ Student (Inheritance & Polymorphism)
+The Student class extends the Person class(subclass of Person class), adding specific attributes such as student ID, marks, and course enrollment. It also includes a method to calculate grades based on marks. By overriding the display method from Person, the system can show student-specific details while following the same overall structure, demonstrating flexibility in design.
 
-The `Student` class extends the `Person` class.
-
-Additional attributes:
-
-* `studentId`
-* `marks`
-* `course` (object of Course class)
-
-Features:
-
-* Grade calculation method
-* Overridden `displayDetails()` method
-
-This demonstrates:
-
-* **Inheritance** (Student inherits from Person)
-* **Polymorphism** (Method overriding of `displayDetails()`)
-
----
-
-## 3️⃣ Course Class
-
-The `Course` class contains:
-
-* `courseName`
-* `courseCode`
-
-All attributes are private and accessed using getters and setters.
-
-This demonstrates:
-
-* **Encapsulation**
-
----
+## 3️⃣ Course Class (Encapsulation)
+The Course class stores information about courses, including course name and code. These details are kept private and accessed through controlled methods, ensuring that each student is correctly linked to a course. This part keeps course data organized and secure while supporting the functionality of the Student class.
 
 ## 4️⃣ MainApp Class
+The MainApp class is the central part of the system that runs the program. It creates Course and Student objects, calculates grades, and displays all student details. This class coordinates the different parts of the system and ensures that the program works correctly from start to finish.
 
-This is the main execution class that:
-
-* Creates Course objects
-* Creates Student objects
-* Calls methods to display student details
-
----
-
-# 🎯 Functional Requirements Implemented
+## Functional Requirements 
 
 The system successfully:
 
-✔ Captures Student ID
-✔ Captures Student Name
-✔ Captures Course details
-✔ Captures Student Marks
-✔ Calculates Grade based on marks
-✔ Displays full student details
+* Captures Student ID
+* Captures Student Name
+* Captures Course details
+* Captures Student Marks
+* Calculates Grade based on marks
+* Displays full student details
 
----
+# OOP Concepts Demonstrated
 
-# 🧠 OOP Concepts Demonstrated
+## 1. Encapsulation
 
-## ✅ 1. Encapsulation
+* All class attributes are declared private and accessed only through public getter and setter methods. This ensures that the internal state of objects is protected and can only be modified in a controlled way.
 
-* All attributes are declared `private`
-* Access controlled using getters and setters
+* Example from Student class:
 
-## ✅ 2. Inheritance
+private int studentId;
+private int marks;
+private Course course;
 
-* `Student` extends `Person`
+public int getStudentId() {
+    return studentId;
+}
 
-## ✅ 3. Polymorphism
+public void setStudentId(int studentId) {
+    this.studentId = studentId;
+}
 
-* `displayDetails()` method overridden in `Student`
+public int getMarks() {
+    return marks;
+}
 
-## ✅ 4. Abstraction
+public void setMarks(int marks) {
+    this.marks = marks;
+}
 
-* `Person` class declared as `abstract`
-* Contains abstract method `displayDetails()`
+## 2. Inheritance
 
----
+* The Student class inherits common attributes and behavior from the abstract Person class, demonstrating inheritance. This allows reusability and avoids code duplication.
+
+* Example:
+
+public class Student extends Person {
+    // Student inherits 'name' from Person
+    private int studentId;
+    private int marks;
+    private Course course;
+
+    public Student(int studentId, String name, int marks, Course course) {
+        super(name); // calling Person constructor
+        this.studentId = studentId;
+        this.marks = marks;
+        this.course = course;
+    }
+}
+
+## 3. Polymorphism
+
+* The Student class overrides the abstract method displayDetails() from Person, demonstrating runtime polymorphism. This allows different objects to have customized behavior for the same method.
+
+Example:
+
+@Override
+public void displayDetails() {
+    System.out.println("Student ID: " + studentId);
+    System.out.println("Student Name: " + name);
+    course.displayCourse();
+    System.out.println("Marks: " + marks);
+    System.out.println("Grade: " + calculateGrade());
+    System.out.println("----------------------------");
+}
+## 4. Abstraction
+
+* The Person class is declared abstract, providing a general blueprint for all person-like objects. It contains the abstract method displayDetails() which must be implemented by all subclasses, ensuring a standard interface while allowing flexibility.
+
+Example:
+
+public abstract class Person {
+    protected String name;
+
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public abstract void displayDetails(); // must be implemented by subclasses
+}
 
 # 🧮 Grade Calculation Logic
 
@@ -158,42 +138,52 @@ The system successfully:
 | 50 – 59  | C     |
 | Below 50 | Fail  |
 
----
-
 # ▶️ How to Run the Program
 
 ### Step 1: Compile
+Open your terminal, navigate to the cloned project folder, and run:
 
-```bash
 javac *.java
-```
 
+This compiles all .java files into .class files.
 ### Step 2: Run
+After successful compilation, execute the program using:
 
-```bash
 java MainApp
-```
 
----
+The program will create student and course objects, calculate grades, and display student details in the terminal.
 
 # 🖥 Sample Output
-
-```
 Student ID: 1
 Student Name: Kelvin Kariuki
-Course Name: Object Oriented Programming
-Course Code: OOP101
-Marks: 75
+Course Name: Object Oriented Software Design Methods
+Course Code: OOSDM101
+Marks: 95
 Grade: A
 ----------------------------
 
 Student ID: 2
 Student Name: Grace Wanjiku
-Course Name: Data Structures
-Course Code: DS102
-Marks: 62
-Grade: B
+Course Name: Data Structures and Algorithms
+Course Code: DSA102
+Marks: 90
+Grade: A
+----------------------------
 
+Student ID: 3
+Student Name: Jane wambua
+Course Name: Object Oriented Software Design Methods
+Course Code: OOSDM101
+Marks: 85
+Grade: A
+----------------------------
+
+Student ID: 2
+Student Name: Mutisya Simiyu
+Course Name: Data Structures and Algorithms
+Course Code: DSA102
+Marks: 80
+Grade: A
 # 📌 Conclusion
 
 The Student Management System successfully demonstrates fundamental Object-Oriented Software Design principles. The use of abstraction, encapsulation, inheritance, and polymorphism ensures modular, maintainable, and reusable code.

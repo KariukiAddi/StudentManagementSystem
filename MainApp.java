@@ -17,5 +17,7 @@ public class MainApp {
         // Display student details
         student1.displayDetails();
         student2.displayDetails();
+        student3.displayDetails();
+        student4.displayDetails();
     }
 }
